@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.acme.order.customer.Customer;
 import com.acme.order.customer.CustomerRepository;
+import com.acme.order.customer.CustomerType;
 import com.acme.order.customer.CustomerTypeRepository;
 import com.acme.order.pizza.PizzaOrderService;
 import com.acme.order.pizza.PizzaType;
@@ -44,4 +45,13 @@ public class JpaTutorialApplicationTests {
 		orderService.deliverOrder(2l);
 	}
 
+	@Test
+	public void findIndividualTest() {
+		givenIndividualCustomer();
+	}
+
+	private void givenIndividualCustomer() {
+		CustomerType customerType = CustomerType.builder().name("INDIVIDUAL").build();
+
+	}
 }
